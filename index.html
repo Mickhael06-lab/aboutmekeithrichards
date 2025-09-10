@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mickhael Keith Richard — Portfolio</title>
+  <style>
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Dancing+Script:wght@700&family=Montserrat:wght@500&display=swap');
+
+    :root{
+      --card:#060133;
+      --accent:#0ae29a;
+      --muted:#ee4f10;
+      --glowblue:#4db8ff; /* biru muda agak tua */
+      --glowpink:#ff4fd6; /* pink glowing */
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Roboto', sans-serif;
+      font-size:18px;
+      margin:0;
+      background:url('futuristic-coding-setup-stockcake.jpg') no-repeat center center fixed;
+      background-size:cover;
+      color:#e6eef6
+    }
+    .overlay{
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:linear-gradient(rgba(7,17,38,0.3), rgba(7,17,38,0.5));
+      z-index:-1
+    }
+    .container{max-width:1000px;margin:40px auto;padding:24px;animation:fadeIn 1.2s ease-in-out}
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,150,209,0.4)}
+    header{display:flex;gap:20px;align-items:center;animation:slideDown 1s ease}
+    .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;box-shadow:0 0 12px rgba(0,150,209,0.6);transition:transform 0.3s ease}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .avatar:hover{transform:scale(1.05)}
+
+    /* Judul utama */
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      color: var(--accent);
+      text-shadow: 0 0 5px var(--accent),
+                   0 0 10px var(--accent),
+                   0 0 20px var(--accent);
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Glow text biru dengan animasi masuk */
+    .glow-text {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--glowblue);
+      margin: 6px 0;
+      text-shadow: 0 0 6px var(--glowblue), 0 0 12px var(--glowblue), 0 0 20px var(--glowblue);
+      font-family: 'Roboto', sans-serif;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards, pulseGlow 6s infinite ease-in-out;
+      animation-delay: 0.5s, 2s;
+    }
+
+    /* Glow text pink khusus portfolio */
+    .glow-pink {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--glowpink);
+      margin: 6px 0;
+      text-shadow: 0 0 6px var(--glowpink), 0 0 12px var(--glowpink), 0 0 20px var(--glowpink);
+      font-family: 'Roboto', sans-serif;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards, pulseGlowPink 6s infinite ease-in-out;
+      animation-delay: 0.5s, 2s;
+    }
+
+    h2, h3 {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      color: var(--accent);
+      text-shadow: 0 0 5px var(--accent),
+                   0 0 15px var(--accent);
+    }
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+    .meta{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    dl{margin:0;font-family:'Roboto', sans-serif;}
+    dt{font-family:'Montserrat', sans-serif;font-weight:500;color:var(--muted);font-size:14px;text-transform:uppercase}
+    dd{margin:6px 0 12px;color:#fff;font-family:'Roboto', sans-serif;}
+    ul{padding-left:20px;font-family:'Roboto', sans-serif;}
+    li{margin-bottom:6px}
+
+    /* Link style umum */
+    a { text-decoration: none; font-weight: bold; transition: 0.3s; }
+    a[href*="instagram.com"] { color: #e4405f; }
+    a[href*="instagram.com"]:hover { color: #ff6f91; text-shadow: 0 0 8px #ff6f91; }
+    a[href*="linkedin.com"] { color: #0a66c2; }
+    a[href*="linkedin.com"]:hover { color: #1da1f2; text-shadow: 0 0 8px #1da1f2; }
+    a[href*="facebook.com"] { color: #1877f2; }
+    a[href*="facebook.com"]:hover { color: #3b5998; text-shadow: 0 0 8px #3b5998; }
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+      50% { text-shadow: 0 0 20px var(--accent), 0 0 40px #00bfff; }
+      100% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 6px var(--glowblue), 0 0 12px var(--glowblue); }
+      50% { text-shadow: 0 0 20px var(--glowblue), 0 0 40px var(--glowblue); }
+    }
+    @keyframes pulseGlowPink {
+      0%, 100% { text-shadow: 0 0 6px var(--glowpink), 0 0 12px var(--glowpink); }
+      50% { text-shadow: 0 0 20px var(--glowpink), 0 0 40px var(--glowpink); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(20px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:100px;height:100px}}
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="avatar">
+          <img src="Gambar.jpg" alt="Profile Photo">
+        </div>
+        <div>
+          <h1>Mickhael Keith Richard Simangunsong</h1>
+          <p class="glow-text">Student — Department of Computer Science, IPB University</p>
+        </div>
+      </header>
+
+      <div class="grid">
+        <main>
+          <section>
+            <h2>Identity</h2>
+            <dl>
+              <dt>Full Name</dt>
+              <dd class="glow-text">Mickhael Keith Richard Simangunsong</dd>
+
+              <dt>Student ID</dt>
+              <dd class="glow-text">M0403241061</dd>
+
+              <dt>Nickname / Proxy</dt>
+              <dd class="glow-text">DeMorgan</dd>
+
+              <dt>Institution</dt>
+              <dd class="glow-text">IPB University — Department of Computer Science</dd>
+            </dl>
+          </section>
+
+          <section style="margin-top:20px;">
+            <h2>Portfolio</h2>
+            <ul>
+              <li class="glow-pink">Chairman of Games PL Fair 2024</li>
+              <li class="glow-pink">Committee Member of Games PL Fair 2023</li>
+            </ul>
+          </section>
+        </main>
+
+        <aside class="meta">
+          <h3>Social Media</h3>
+          <dl>
+            <dt>Instagram</dt>
+            <dd><a class="btn" href="https://www.instagram.com/mickhaelkrs?igsh=MTd5eThxdXZ0bGZwZg==" target="_blank">@mickhaelkrs</a></dd>
+
+            <dt>LinkedIn</dt>
+            <dd><a class="btn" href="https://www.linkedin.com/in/mickhael-keith-richard-simangunsong-1a9003324/" target="_blank">LinkedIn Profile</a></dd>
+
+            <dt>Facebook</dt>
+            <dd><a class="btn" href="https://www.facebook.com/share/1Cqzk4zs8m/" target="_blank">Facebook</a></dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
