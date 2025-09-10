@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mickhael Keith Richard — Portfolio</title>
   <style>
     /* Import Google Fonts */
@@ -12,28 +12,34 @@
       --card:#060133;
       --accent:#0ae29a;
       --muted:#ee4f10;
-      --glowblue:#4db8ff; /* biru muda agak tua */
-      --glowpink:#ff4fd6; /* pink glowing */
+      --glowblue:#4db8ff;
+      --glowpink:#ff4fd6;
     }
+
     *{box-sizing:border-box}
     body{
       font-family:'Roboto', sans-serif;
       font-size:18px;
       margin:0;
-      background:url('futuristic-coding-setup-stockcake.jpg') no-repeat center center fixed;
+      background:url('futuristic-coding-setup-stockcake.jpg') no-repeat center center;
       background-size:cover;
-      color:#e6eef6
+      color:#e6eef6;
     }
+
+    /* Background overlay */
     .overlay{
       position:fixed;
       top:0;left:0;width:100%;height:100%;
       background:linear-gradient(rgba(7,17,38,0.3), rgba(7,17,38,0.5));
-      z-index:-1
+      z-index:-1;
     }
+
     .container{max-width:1000px;margin:40px auto;padding:24px;animation:fadeIn 1.2s ease-in-out}
     .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:transform 0.3s ease, box-shadow 0.3s ease}
     .card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,150,209,0.4)}
-    header{display:flex;gap:20px;align-items:center;animation:slideDown 1s ease}
+
+    /* Header */
+    header{display:flex;gap:20px;align-items:center;animation:slideDown 1s ease; flex-wrap:wrap}
     .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;box-shadow:0 0 12px rgba(0,150,209,0.6);transition:transform 0.3s ease}
     .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .avatar:hover{transform:scale(1.05)}
@@ -51,7 +57,7 @@
       animation: glow 2s infinite alternate;
     }
 
-    /* Glow text biru dengan animasi masuk */
+    /* Glow text biru */
     .glow-text {
       font-size: 22px;
       font-weight: 600;
@@ -64,7 +70,7 @@
       animation-delay: 0.5s, 2s;
     }
 
-    /* Glow text pink khusus portfolio */
+    /* Glow text pink */
     .glow-pink {
       font-size: 22px;
       font-weight: 600;
@@ -93,7 +99,7 @@
     ul{padding-left:20px;font-family:'Roboto', sans-serif;}
     li{margin-bottom:6px}
 
-    /* Link style umum */
+    /* Link style */
     a { text-decoration: none; font-weight: bold; transition: 0.3s; }
     a[href*="instagram.com"] { color: #e4405f; }
     a[href*="instagram.com"]:hover { color: #ff6f91; text-shadow: 0 0 8px #ff6f91; }
@@ -102,27 +108,27 @@
     a[href*="facebook.com"] { color: #1877f2; }
     a[href*="facebook.com"]:hover { color: #3b5998; text-shadow: 0 0 8px #3b5998; }
 
+    /* Animations */
     @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
-      50% { text-shadow: 0 0 20px var(--accent), 0 0 40px #00bfff; }
-      100% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { text-shadow: 0 0 6px var(--glowblue), 0 0 12px var(--glowblue); }
-      50% { text-shadow: 0 0 20px var(--glowblue), 0 0 40px var(--glowblue); }
-    }
-    @keyframes pulseGlowPink {
-      0%, 100% { text-shadow: 0 0 6px var(--glowpink), 0 0 12px var(--glowpink); }
-      50% { text-shadow: 0 0 20px var(--glowpink), 0 0 40px var(--glowpink); }
-    }
-    @keyframes fadeInUp {
-      0% { opacity:0; transform:translateY(20px); }
-      100% { opacity:1; transform:translateY(0); }
-    }
+    @keyframes glow {0% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); } 50% { text-shadow: 0 0 20px var(--accent), 0 0 40px #00bfff; } 100% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }}
+    @keyframes pulseGlow {0%, 100% { text-shadow: 0 0 6px var(--glowblue), 0 0 12px var(--glowblue); } 50% { text-shadow: 0 0 20px var(--glowblue), 0 0 40px var(--glowblue); }}
+    @keyframes pulseGlowPink {0%, 100% { text-shadow: 0 0 6px var(--glowpink), 0 0 12px var(--glowpink); } 50% { text-shadow: 0 0 20px var(--glowpink), 0 0 40px var(--glowpink); }}
+    @keyframes fadeInUp {0% { opacity:0; transform:translateY(20px); } 100% { opacity:1; transform:translateY(0); }}
 
-    @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:100px;height:100px}}
+    /* Responsive adjustments */
+    @media (max-width: 880px){
+      .grid{grid-template-columns:1fr;}
+      .avatar{width:100px;height:100px;}
+    }
+    @media (max-width: 480px){
+      body{font-size:16px;}
+      h1{font-size:28px;text-shadow:0 0 5px var(--accent);}
+      .glow-text,.glow-pink{font-size:18px;text-shadow:0 0 6px var(--glowblue);}
+      .avatar{width:80px;height:80px;}
+      .card{padding:18px;}
+      .container{padding:16px;}
+    }
   </style>
 </head>
 <body>
@@ -146,13 +152,10 @@
             <dl>
               <dt>Full Name</dt>
               <dd class="glow-text">Mickhael Keith Richard Simangunsong</dd>
-
               <dt>Student ID</dt>
               <dd class="glow-text">M0403241061</dd>
-
               <dt>Nickname / Proxy</dt>
               <dd class="glow-text">DeMorgan</dd>
-
               <dt>Institution</dt>
               <dd class="glow-text">IPB University — Department of Computer Science</dd>
             </dl>
@@ -171,13 +174,11 @@
           <h3>Social Media</h3>
           <dl>
             <dt>Instagram</dt>
-            <dd><a class="btn" href="https://www.instagram.com/mickhaelkrs?igsh=MTd5eThxdXZ0bGZwZg==" target="_blank">@mickhaelkrs</a></dd>
-
+            <dd><a href="https://www.instagram.com/mickhaelkrs?igsh=MTd5eThxdXZ0bGZwZg==" target="_blank">@mickhaelkrs</a></dd>
             <dt>LinkedIn</dt>
-            <dd><a class="btn" href="https://www.linkedin.com/in/mickhael-keith-richard-simangunsong-1a9003324/" target="_blank">LinkedIn Profile</a></dd>
-
+            <dd><a href="https://www.linkedin.com/in/mickhael-keith-richard-simangunsong-1a9003324/" target="_blank">LinkedIn Profile</a></dd>
             <dt>Facebook</dt>
-            <dd><a class="btn" href="https://www.facebook.com/share/1Cqzk4zs8m/" target="_blank">Facebook</a></dd>
+            <dd><a href="https://www.facebook.com/share/1Cqzk4zs8m/" target="_blank">Facebook</a></dd>
           </dl>
         </aside>
       </div>
